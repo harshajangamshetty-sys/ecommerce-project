@@ -1,0 +1,10 @@
+.not-found-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;       
+}
+
+.not-found-container p {
+    font-size:xx-large;
+}
