@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router";
-import { HomePage } from "./pages/HomePage";
+import { HomePage } from "./pages/home/HomePage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
-import { OrderPage } from "./pages/OrderPage";
+import { OrderPage } from "./pages/orders/OrderPage";
 import { TrackingPage } from "./pages/TrackingPage";
-import { NotFoundPage } from "./pages/NotFoundPage";
-import { useEffect , useState } from "react";
+import { NotFoundPage } from "./pages/notfound/NotFoundPage";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -19,9 +19,9 @@ function App() {
 
   return (
     <Routes>
-      <Route index element={<HomePage cart={cart}/>} />
-      <Route path="checkout" element={<CheckoutPage cart={cart}/>} />
-      <Route path="orders" element={<OrderPage cart={cart}/>} />
+      <Route index element={<HomePage cart={cart} />} />
+      <Route path="checkout" element={<CheckoutPage cart={cart} />} />
+      <Route path="orders" element={<OrderPage cart={cart} />} />
       <Route path="tracking" element={<TrackingPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
