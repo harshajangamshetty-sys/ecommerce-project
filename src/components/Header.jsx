@@ -21,6 +21,15 @@ export function Header ({cart}) {
     navigate(`/?search=${search}`)
   }
 
+  const keyDown = (e) => {
+    if(e.key === 'Enter') {
+      searchProducts();
+    }
+    if(e.key === 'Escape') {
+      setSearch('');
+    }
+  }
+
   let totalQuantity = 0;
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
@@ -36,9 +45,9 @@ export function Header ({cart}) {
         </div>
 
         <div className="middle-section">
-          <input className="search-bar" type="text" placeholder="Search" value={search} onChange={updateSearch}/>
+          <input className="search-bar" type="text" placeholder="Search" value={search} onChange={updateSearch} onKeyDown={keyDown}/>
 
-          <button className="search-button" onClick={searchProducts} >
+          <button className="search-button" onClick={searchProducts}>
             <img className="search-icon" src={SearchIcon} />
           </button>
         </div>
